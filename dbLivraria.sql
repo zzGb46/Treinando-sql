@@ -49,6 +49,8 @@ idCliente int not null,
 primary key(idVenda),
 foreign key(idCliente) references tbClientes(idCliente)
 );
+
+
  
 create table tbItens_Vendas(
 idVenda int not null,
@@ -65,6 +67,8 @@ idAutor int not null,
 foreign key(idLivro) references tbLivros(idLivro),
 foreign key(idAutor) references tbAutores(idAutor)
 );
+
+
  
 desc tbGeneros;
 desc tbAutores;
@@ -115,7 +119,23 @@ values('O tigrinho do dinheiro', 3.00, 100, 2);
 insert into tbLivros(titulo, preco, estoque, idGenero)
 values('Troca de olhares fulminante', 1000.00, 1, 6);
 
+insert into tbVendas(data,total, idCliente)
+values('2024-05-16', 100.50, 3);
 
+insert into tbVendas(data,total, idCliente)
+values('2001-09-11', 150.50, 2);
+
+insert into tbVendas(data,total, idCliente)
+values('1789-12-25', 80.50, 1);
+
+insert into tbItens_Vendas(quantidade, idVenda, idLivro, subTotal)
+value(1,1,3, 150.20);
+
+insert into tbItens_Vendas(quantidade, idVenda, idLivro, subTotal)
+value(1,1,4, 150.25);
+
+insert into tbItens_Vendas(quantidade, idVenda, idLivro, subTotal)
+value(3,1,2, 140.50);
 
 
 -- Pesquisar os campos das tabelas
@@ -126,3 +146,7 @@ select * from tbAutores;
 select * from tbClientes;
 
 select * from tbLivros;
+
+select * from tbVendas;
+
+select * from tbItens_Vendas;
