@@ -69,6 +69,8 @@ foreign key(idAutor) references tbAutores(idAutor)
 );
 
 
+
+
  
 desc tbGeneros;
 desc tbAutores;
@@ -100,12 +102,16 @@ values('obama','98523-8547');
 insert into tbClientes(nome, telefone)
 values('nabara','98523-8547');
 
+
+
 insert into tbClientes(nome, telefone)
 values('xhina','98523-8547');
  
 
  insert into tbLivros(titulo, preco, estoque, idGenero)
 values('escute o que ela diz', 55.47, 3, 4);
+
+
 
 insert into tbLivros(titulo, preco, estoque, idGenero)
 values('Teoria das especies', 100.00, 2, 7);
@@ -118,6 +124,10 @@ values('O tigrinho do dinheiro', 3.00, 100, 2);
 
 insert into tbLivros(titulo, preco, estoque, idGenero)
 values('Troca de olhares fulminante', 1000.00, 1, 6);
+
+
+
+
 
 insert into tbVendas(data,total, idCliente)
 values('2024-05-16', 100.50, 3);
@@ -137,6 +147,9 @@ value(1,1,4, 150.25);
 insert into tbItens_Vendas(quantidade, idVenda, idLivro, subTotal)
 value(3,1,2, 140.50);
 
+insert into tbEscreve(idLivro, idAutor)
+values(5, 3);
+
 
 -- Pesquisar os campos das tabelas
 select * from tbGeneros;
@@ -150,3 +163,30 @@ select * from tbLivros;
 select * from tbVendas;
 
 select * from tbItens_Vendas;
+
+select * from tbEscreve;
+
+
+--Alterando registros das tabelas
+ 
+update tbClientes set nome = 'Marco' where idCliente=2;
+
+update tbClientes set nome = 'muda', telefone = '2911-5529' where idCliente= 1;
+
+select * from tbClientes;
+
+
+update tbLivros set titulo = 'escute la', preco = 2.00, estoque= 2, idGenero =1 where idLivro = 1;
+
+update tbLivros set titulo='me roubando a brisa', preco =500.00, estoque=3, idGenero=1 where idLivro = 5;
+select * from tbLivros;
+
+--Apagando o registro da tabela
+-- delete from tbVendas where idCliente=2;
+
+ --delete grom tbClientes where idClientes=2;
+ --delete from tbLivros where idLivro=1;
+
+select * from tbLivros;
+select * from tbVendas;
+select * from tbClientes;
