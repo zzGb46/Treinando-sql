@@ -1,28 +1,33 @@
 drop database dbBarbearia;
-
+ 
 create database dbBarbearia;
-
+ 
 use dbBarbearia;
-
+ 
 create table tbProdutos(
-    codProd int not null auto_increment,
-    descricao varchar(100),
-    marca varchar(50),
-    preco decimal(9,2),
-    primary key(codProd)
+codProd int not null auto_increment,
+descricao varchar(100),
+marca varchar(50),
+preco decimal(9,2),
+primary key(codProd)
 );
-
-insert into tbProdutos(descricao, marca, preco)
-values('Condicionador','nivea', 50.00);
-insert into tbProdutos(descricao, marca, preco)
-values('Shampoo','clear', 10.00);
-insert into tbProdutos(descricao, marca, preco)
-values('Sabonete','phebo', 20.00);
-insert into tbProdutos(descricao, marca, preco)
-values('Gel','monange', 55.00);
-
+ 
+insert into tbProdutos(descricao,marca,preco)
+    values('Shampoo','Nivea', 30.0);
+insert into tbProdutos(descricao,marca,preco)
+    values('Sabonete','Phebo', 50.0);
+insert into tbProdutos(descricao,marca, preco)
+    values('Creme de barbear','Barbers', 70.0);
+insert into tbProdutos(descricao,marca,preco)
+    values('Gel para cabelos','Salome', 25.0);
+ 
 select * from tbProdutos;
-
---delete from tbProdutos where codProd = 2;
-
+ 
+-- delete from tbProdutos where codProd = 2;
+ 
 select * from tbProdutos;
+ 
+-- select codProd as 'Código',
+--     descricao as 'Descrição',
+--     marca as 'Marca',
+--     preco as 'Preço' from tbProdutos;
